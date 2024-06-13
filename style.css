@@ -2,84 +2,97 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 90vh;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #e0e0e0;
+    min-height: 100vh;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
     flex-direction: column;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 #board {
     display: flex;
     flex-direction: column;
-    padding: 15px;
-    background-color: #fff;
+    padding: 20px;
+    background-color: #ffffff;
     border-radius: 20px;
-    box-shadow: 0px 10px 20px rgba(0,0,0,0.3);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    width: max-content;
 }
 
 .player {
-    border: 5px solid;
-    padding: 10px;
+    border: 3px solid;
+    padding: 10px 20px;
     text-align: center;
     font-weight: bold;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
 #player-1 {
-    border-color: #00f;
-    color: #00f;
+    border-color: #3498db;
+    color: #3498db;
 }
 
 #player-2 {
-    border-color: #f00;
-    color: #f00;
+    border-color: #e74c3c;
+    color: #e74c3c;
 }
 
 #player-1.turn {
-    background-color: rgb(186, 186, 251);
+    background-color: rgba(52, 152, 219, 0.2);
 }
 
 #player-2.turn {
-    background-color: rgb(251, 186, 186);
+    background-color: rgba(231, 76, 60, 0.2);
 }
 
 #boxes {
     display: grid;
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
-    gap: 5px;
-    margin : 10px 0px
+    gap: 10px;
+    margin: 0 auto;
 }
 
 .box {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
+    background-color: #ecf0f1;
+    border: 2px solid #bdc3c7;
     font-size: 24px;
     cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
 }
 
 .box.player-1::after {
     content: "⚬";
-    color: #00f;
+    color: #3498db;
     font-size: 80px;
     font-weight: normal;
-    margin-top: -15px;
+    margin-top: -10px;
 }
 
 .box.player-2::after {
     content: "✖";
-    color: #f00;
-    font-size: 40px;
+    color: #e74c3c;
+    font-size: 60px;
     font-weight: bold;
+    margin-top: -10px;
 }
 
-/* Add hover effect */
 .box:hover {
-    background-color: #e0e0e0;
+    background-color: #d0d0d0;
 }
 
 .box.winner {
-    background-color: rgb(255, 232, 99) !important;
+    background-color: #ffe763 !important;
 }
